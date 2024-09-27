@@ -11,14 +11,6 @@ abstract class PlayableItem extends MediaPlayerItem implements Playable {
         setDuration(duration);
     }
 
-    public void setPlaying(boolean isPlaying) {
-        this.isPlaying = isPlaying;
-    }
-
-    public boolean getIsPlaying() {
-        return isPlaying;
-    }
-
     @Override
     public void play() {
         setPlaying(true);
@@ -40,6 +32,14 @@ abstract class PlayableItem extends MediaPlayerItem implements Playable {
         if(getVolume() != 0)
             setVolume(getVolume() - 10);
 
+    }
+
+    public void setPlaying(boolean isPlaying) {
+        this.isPlaying = isPlaying;
+    }
+
+    public boolean getIsPlaying() {
+        return isPlaying;
     }
 
     public int getDuration() {

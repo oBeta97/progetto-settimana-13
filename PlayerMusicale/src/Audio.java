@@ -4,9 +4,9 @@ public class Audio extends PlayableItem  {
     String artist;
     String album;
     String genre;
-    String year;
+    int year;
 
-    public Audio(String title, int duration, String artist, String album, String genre, String year) {
+    public Audio(String title, int duration, String artist, String album, String genre, int year) {
         super(title, duration);
         setArtist(artist);
         setAlbum(album);
@@ -38,24 +38,25 @@ public class Audio extends PlayableItem  {
         this.genre = genre;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
     @Override
     public String toString() {
         return "Audio{" +
-                "\ttitle='" + getTitle() + '\'' +
-                "\tartist='" + getArtist() + '\'' +
-                "\talbum='" + getAlbum() + '\'' +
-                "\tgenre='" + getGenre() + '\'' +
-                "\tyear='" + getYear() + '\'' +
-                "\tduration=" + getDuration() +
-                "\tisPlaying=" + getIsPlaying() +
-                '}';
+                    "\n\ttitle='" + getTitle() + '\'' +
+                    "\n\tartist='" + getArtist() + '\'' +
+                    "\n\talbum='" + getAlbum() + '\'' +
+                    "\n\tgenre='" + getGenre() + '\'' +
+                    "\n\tyear='" + getYear() + '\'' +
+                    "\n\tduration=" + getDuration() +
+                    "\n\tisPlaying=" + getIsPlaying() +
+                    "\n\tvolume=" + getVolume() +
+                "\n}";
     }
 }

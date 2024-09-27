@@ -1,26 +1,17 @@
 import interfaces.Showable;
 import interfaces.Viewable;
 
-public class Image implements Viewable, Showable {
+public class Image extends MediaPlayerItem implements Viewable, Showable {
 
     private int brightness;
     private boolean isVisible;
-    private String filename;
     private String format;
 
-    public Image(String filename, String format) {
-        setFilename(filename);
+    public Image(String title, String format) {
+        super(title);
         setFormat(format);
         setBrightness(50); // Default brightness
         setVisible(false); // Default visibility
-    }
-
-    public String getFilename() {
-        return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
     }
 
     public String getFormat() {
@@ -83,11 +74,11 @@ public class Image implements Viewable, Showable {
 
     @Override
     public String toString() {
-        return "Image{" +
-                "filename='" + getFilename() + '\'' + "\t" +
-                "format='" + getFormat() + '\'' + "\t" +
-                "brightness=" + getBrightness() + "\t" +
-                "isVisible=" + isVisible() +
-                '}';
+        return "Image{\n\t" +
+                    "filename='" + getTitle() + '\'' + "\n\t" +
+                    "format='" + getFormat() + '\'' + "\n\t" +
+                    "brightness=" + getBrightness() + "\n\t" +
+                    "isVisible=" + isVisible() +
+                "\n}";
     }
 }

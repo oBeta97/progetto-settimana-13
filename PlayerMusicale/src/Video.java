@@ -4,9 +4,19 @@ public class Video extends PlayableItem implements Showable {
     
     private int brightness;
 
-    public Video(String title, int duration, int brightness) {
+    public Video(String title, int duration) {
         super(title, duration);
-        setBrightness(brightness);
+        setBrightness(50);
+    }
+
+    @Override
+    public void moreBrightness() {
+        setBrightness(getBrightness() + 10);
+    }
+
+    @Override
+    public void lessBrightness() {
+        setBrightness(getBrightness() - 10);
     }
 
     public int getBrightness() {
@@ -20,17 +30,6 @@ public class Video extends PlayableItem implements Showable {
             System.out.println("Brightness value should be between 0 and 100.");
         }
     }
-
-    @Override
-    public void moreBrightness() {
-        setBrightness(getBrightness() + 10);
-    }
-
-    @Override
-    public void lessBrightness() {
-        setBrightness(getBrightness() - 10);
-    }
-
 
     @Override
     public String toString() {
