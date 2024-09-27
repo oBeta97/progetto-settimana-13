@@ -4,17 +4,14 @@ abstract class MediaPlayerItem {
 
 
     public MediaPlayerItem(String title) {
-        this.title = title;
+        setTitle(title);
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    protected void setTitle(String title) {
         this.title = title;
-    }
-
-    public static class PlayableItem {
     }
 }

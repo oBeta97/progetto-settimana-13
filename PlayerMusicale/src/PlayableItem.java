@@ -14,27 +14,33 @@ abstract class PlayableItem extends MediaPlayerItem implements Playable {
     @Override
     public void play() {
         setPlaying(true);
+        System.out.println(getTitle() + " in riproduzione");
     }
     
     @Override
     public void pause() {
         setPlaying(false);
+        System.out.println(getTitle() + " in pausa");
     }
 
     @Override
     public void turnUpVolume(){
-        if(getVolume() != 100)
+        if(getVolume() != 100) {
             setVolume(getVolume() + 10);
+            System.out.println("Il volume di " + getTitle() + " è stato aumentato di 10");
+        }
     }
 
     @Override
     public void turnDownVolume(){
-        if(getVolume() != 0)
+        if(getVolume() != 0){
             setVolume(getVolume() - 10);
+            System.out.println("Il volume di " + getTitle() + " è stato diminuito di 10");
+        }
 
     }
 
-    public void setPlaying(boolean isPlaying) {
+    protected void setPlaying(boolean isPlaying) {
         this.isPlaying = isPlaying;
     }
 
@@ -46,7 +52,7 @@ abstract class PlayableItem extends MediaPlayerItem implements Playable {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    protected void setDuration(int duration) {
         this.duration = duration;
     }
 
@@ -54,7 +60,7 @@ abstract class PlayableItem extends MediaPlayerItem implements Playable {
         return this.volume;
     }
 
-    public void setVolume(int volume) {
+    protected void setVolume(int volume) {
         this.volume = volume;
     }
 

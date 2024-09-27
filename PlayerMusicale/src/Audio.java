@@ -1,10 +1,10 @@
 
 public class Audio extends PlayableItem  {
 
-    String artist;
-    String album;
-    String genre;
-    int year;
+    private String artist;
+    private String album;
+    private String genre;
+    private int year;
 
     public Audio(String title, int duration, String artist, String album, String genre, int year) {
         super(title, duration);
@@ -18,7 +18,7 @@ public class Audio extends PlayableItem  {
         return artist;
     }
 
-    public void setArtist(String artist) {
+    private void setArtist(String artist) {
         this.artist = artist;
     }
 
@@ -26,7 +26,7 @@ public class Audio extends PlayableItem  {
         return album;
     }
 
-    public void setAlbum(String album) {
+    private void setAlbum(String album) {
         this.album = album;
     }
 
@@ -34,7 +34,7 @@ public class Audio extends PlayableItem  {
         return genre;
     }
 
-    public void setGenre(String genre) {
+    private void setGenre(String genre) {
         this.genre = genre;
     }
 
@@ -42,7 +42,7 @@ public class Audio extends PlayableItem  {
         return year;
     }
 
-    public void setYear(int year) {
+    private void setYear(int year) {
         this.year = year;
     }
 

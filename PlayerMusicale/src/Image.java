@@ -18,23 +18,23 @@ public class Image extends MediaPlayerItem implements Viewable, Showable {
         return format;
     }
 
-    public void setFormat(String format) {
+    private void setFormat(String format) {
         this.format = format;
     }
 
-    public void setVisible(boolean isVisible) {
+    private void setVisible(boolean isVisible) {
         this.isVisible = isVisible;
     }
     
     @Override
     public void show() {
-        isVisible = true;
+        setVisible(true);
         System.out.println("Image is now visible.");
     }
 
     @Override
     public void hide() {
-        isVisible = false;
+        setVisible(false);
         System.out.println("Image is now hidden.");
     }
 
@@ -64,11 +64,13 @@ public class Image extends MediaPlayerItem implements Viewable, Showable {
     @Override
     public void moreBrightness() {
         setBrightness(getBrightness() + 10);
+        System.out.println("Aumentato valore della luminosità a: " + getBrightness());
     }
 
     @Override
     public void lessBrightness() {
         setBrightness(getBrightness() - 10);
+        System.out.println("Diminuito valore della luminosità a: " + getBrightness());
     }
 
 

@@ -12,11 +12,13 @@ public class Video extends PlayableItem implements Showable {
     @Override
     public void moreBrightness() {
         setBrightness(getBrightness() + 10);
+        System.out.println("Aumentato valore della luminosità a: " + getBrightness());
     }
 
     @Override
     public void lessBrightness() {
         setBrightness(getBrightness() - 10);
+        System.out.println("Diminuito valore della luminosità a: " + getBrightness());
     }
 
     public int getBrightness() {
